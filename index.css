@@ -38,6 +38,21 @@
     opacity: 1;
   }
 }
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50%;
+  }
+  50% {
+    transform: translate(10px, 15px) scale(1.1);
+    border-radius: 45% 55% 55% 45%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50%;
+  }
+}
+
 .taita-logo-one-1 {
   position: relative;
   width: 81px;
@@ -66,6 +81,21 @@
   line-height: 24px;
   font-weight: 500;
 }
+.blob-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.blob {
+  cursor: pointer;
+
+}
+
+
 .button,
 .label {
   display: flex;
@@ -83,6 +113,12 @@
   padding: var(--padding-xs) var(--padding-xl);
   box-sizing: border-box;
   justify-content: flex-start;
+  cursor: pointer;
+}
+.button:hover, .button1:hover {
+  background: linear-gradient(215.78deg,  #FF00FF, rgb(0, 255, 255));
+  color: rgb(255, 255, 255);
+
 }
 .button-wrapper,
 .main-text {
@@ -175,7 +211,8 @@
 }
 .hero {
   background: linear-gradient(-70.58deg, #f0f, #8600ce 48.87%, #164193);
-  height: 920px;
+  height: 100vh;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   padding: 39px var(--padding-131xl);
@@ -193,7 +230,6 @@
   display: inline-block;
   width: 447px;
   height: 69px;
-  flex-shrink: 0;
 }
 .vector-parent {
   align-self: stretch;
@@ -206,10 +242,18 @@
   gap: var(--gap-5xs);
 }
 .theres-a-palpable {
+  max-width: 700px;
   align-self: stretch;
   position: relative;
   font-size: var(--font-size-mid-5);
   font-family: var(--font-nunito);
+}
+.form {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+  padding-left: 320px;
+  padding-right: 320px;
 }
 .frame-parent {
   flex: 1;
@@ -219,6 +263,8 @@
   justify-content: flex-start;
   gap: 14px;
   opacity: 0;
+  z-index: 1;
+  padding-left: 150px;
 }
 .frame-parent.animate {
   animation: 1s ease 0s 1 normal forwards slide-in-left;
@@ -245,6 +291,7 @@
 }
 .rocket-section-inner {
   width: 502px;
+  padding-right: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -261,7 +308,6 @@
   padding: 0 var(--padding-131xl);
   align-items: center;
   justify-content: center;
-  gap: 62px;
   color: var(--color-gray-100);
   font-family: var(--font-arciform-sans);
 }
@@ -642,6 +688,7 @@
   height: 523.93px;
   object-fit: cover;
   opacity: 0;
+  padding-left: 200px;
 }
 .case-study-child.animate {
   animation: 1s ease 0s 1 normal forwards slide-in-left;
@@ -682,6 +729,7 @@
   gap: 26px;
   opacity: 0;
   margin-left: -133px;
+  padding-right: 300px;
 }
 .frame-container.animate {
   animation: 1s ease 0s 1 normal forwards slide-in-right;
@@ -744,28 +792,27 @@
   height: 22px;
 }
 .divider1,
+
 .title {
-  position: absolute;
-  left: 0;
-}
-.title {
+  padding-top: 10px;
+  padding-bottom: 10x;
   width: calc(100% - 38px);
   top: calc(50% - 14px);
   line-height: 28px;
   display: flex;
   align-items: center;
 }
+
+
 .divider1 {
   width: 100%;
   top: 0;
   right: 0;
   height: 1px;
 }
-.list-1,
-.list-5 {
+.list-1 {
   align-self: stretch;
   position: relative;
-  height: 60px;
 }
 .faq,
 .list {
@@ -784,6 +831,7 @@
   font-family: var(--font-nunito);
 }
 .faq {
+  padding-top: 30px;
   align-self: stretch;
   gap: var(--gap-5xs);
   opacity: 0;
@@ -822,7 +870,6 @@
   display: flex;
   flex-direction: column;
   padding: 62px 0;
-  align-items: center;
   justify-content: center;
   gap: 58px;
   text-align: center;
@@ -882,7 +929,6 @@
   align-items: center;
 }
 .column-1-parent {
-  width: 626px;
   flex-direction: row;
   padding: 0 0 45px;
   box-sizing: border-box;
@@ -903,11 +949,29 @@
   color: var(--light-ffffff);
   font-family: var(--font-nunito);
 }
+
+@media screen and (max-width: 1650px) {
+  .case-study-child {
+    padding-left: 20px;
+  }
+  .frame-parent {
+    padding-left: 20px;
+  }
+  .frame-container {
+    padding-right: 20px;
+  }
+  .rocket-section-inner {
+    padding-right: 0px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
+  .case-study-child {
+    padding-left: 0px;
+  }
   .hero {
-    align-self: stretch;
-    width: auto;
-    height: 670px;
+    height: 100vh;
+    min-height: 800px;
     gap: var(--gap-0);
   }
   .taita-rocket-2-1 {
@@ -923,9 +987,18 @@
     align-self: stretch;
     width: auto;
   }
+  .form {
+    padding-left: 60px;
+    padding-right: 60px ;
+  }
   .frame-container {
     flex: 1;
     height: auto;
+    padding-right: 0px;
+  }
+  .frame-parent {
+    padding-left: 0px;
+
   }
   .case-study,
   .ready-to-transform-your-hiring-parent {
@@ -942,11 +1015,13 @@
     width: 100%;
     height: auto;
     padding-left: 0;
-    padding-right: var(--padding-11xl);
     box-sizing: border-box;
   }
 }
 @media screen and (max-width: 960px) {
+  .column-1-parent {
+    gap: 30px;
+  }
   .main-text {
     align-self: stretch;
     width: auto;
@@ -956,7 +1031,7 @@
     justify-content: flex-start;
   }
   .logos {
-    gap: var(--gap-31xl);
+    gap: 20px;
   }
   .hero {
     align-self: stretch;
@@ -988,6 +1063,10 @@
     align-self: stretch;
     width: auto;
   }
+  .form {
+    padding-left: 30px;
+    padding-right: 30px ;
+  }
   .frame-parent,
   .rocket-section {
     align-self: stretch;
@@ -996,6 +1075,31 @@
   .frame-parent {
     flex: unset;
     justify-content: center;
+    padding-left: 0px;
+
+  }
+  .faq {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+  }
+  .list-1 {
+    align-self: stretch;
+    width: auto;
+
+  }
+  .list {
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: border-box;
+  }
+  .faq,
+  .list {
+    align-self: stretch;
+    width: auto;
+    height: auto;
   }
   .rocket-section {
     width: auto;
@@ -1071,8 +1175,6 @@
   .list {
     align-items: flex-start;
     justify-content: center;
-    padding-left: var(--padding-181xl);
-    padding-right: var(--padding-181xl);
   }
   .ready-to-transform-your-hiring-parent {
     padding-left: var(--padding-81xl);
@@ -1086,7 +1188,30 @@
     box-sizing: border-box;
   }
 }
+
+@media screen and (max-width: 660px) {
+
+.logos {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  width: auto;
+  gap: var(--gap-11xl);
+}
+.hero {
+  height: 1000px;
+}
+
+}
 @media screen and (max-width: 420px) {
+  .faq {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+  }
   .main-text {
     align-self: stretch;
     width: auto;
@@ -1215,4 +1340,39 @@
     align-items: flex-start;
     justify-content: center;
   }
+}
+
+
+
+
+
+.list-1 {
+  cursor: pointer;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.list-1.open .arrow-icon {
+  transform: rotate(90deg);
+}
+
+.list-1 .answer {
+  color: var(--color-gray-100);
+  overflow: hidden;
+  transition: max-height 0.2s ease-out, opacity 0.2s ease-out, padding 0.2s ease-out;
+  max-height: 0;
+  opacity: 0;
+}
+
+.list-1.open .answer {
+  padding-top: 5px;
+  padding-right: 50px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  transition: max-height 0.7s ease-in, opacity 0.2s ease-in,  padding 0.2s ease-in;
+  max-height: 500px;
+  opacity: 1;
 }
