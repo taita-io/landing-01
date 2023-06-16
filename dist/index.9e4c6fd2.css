@@ -255,7 +255,8 @@
 
 .custom-solution-to {
   width: 447px;
-  height: 69px;
+  height: -moz-fit-content;
+  height: fit-content;
   display: inline-block;
   position: relative;
 }
@@ -792,7 +793,8 @@
 }
 
 .vector-parent1 {
-  height: 62px;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: var(--padding-9xl) 0 var(--padding-9xl) .0256348px;
   box-sizing: border-box;
   justify-content: flex-start;

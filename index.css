@@ -243,7 +243,7 @@
   position: relative;
   display: inline-block;
   width: 447px;
-  height: 69px;
+  height: fit-content;
 }
 .vector-parent {
   align-self: stretch;
@@ -718,7 +718,7 @@
 }
 .vector-parent1 {
   align-self: stretch;
-  height: 62px;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   padding: var(--padding-9xl) 0 var(--padding-9xl) 0.025634765625px;
