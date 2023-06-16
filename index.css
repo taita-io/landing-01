@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Arciform';
+  src: url('Arciform.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 @keyframes slide-in-top {
   0% {
     transform: translateY(-200px);
@@ -70,7 +80,7 @@
   position: relative;
 }
 .discover-the-power {
-  font-family: var(--font-arciform-sans);
+  font-family: Arciform, Arial Rounded MT Bold;
 }
 .we-will-work {
   font-size: var(--font-size-mid-5);
@@ -171,9 +181,13 @@
   align-items: flex-start;
   justify-content: center;
   gap: var(--gap-31xl);
-  opacity: 0;
   z-index: 2;
+
 }
+
+
+
+
 .logos.animate {
   animation: 1s ease 0s 1 normal forwards slide-in-bottom;
 }
@@ -309,7 +323,7 @@
   align-items: center;
   justify-content: center;
   color: var(--color-gray-100);
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
 }
 .stage-11 {
   position: relative;
@@ -326,7 +340,7 @@
   top: 0;
   left: 29px;
   font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
   width: 254px;
 }
 .start-your-ai-journey-by-signi-parent {
@@ -452,7 +466,7 @@
 }
 .exploratory-call {
   font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
   width: 254px;
 }
 .upon-selection-well {
@@ -521,7 +535,7 @@
 }
 .custom-solution {
   font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
   width: 298px;
 }
 .following-our-deep-dive {
@@ -575,7 +589,7 @@
   top: 0;
   left: 19px;
   font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
   width: 254px;
 }
 .well-put-your-new-ai-tool-to-parent {
@@ -641,7 +655,7 @@
   top: 0;
   left: 20px;
   font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
   width: 254px;
 }
 .once-your-ai-solution-is-refin-parent {
@@ -713,7 +727,7 @@
   justify-content: flex-start;
   gap: var(--gap-5xs);
   font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
 }
 .challenge-edukoht-employing-container,
 .edukoht-is-an {
@@ -837,7 +851,7 @@
   opacity: 0;
   text-align: center;
   color: var(--color-darkslateblue);
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
 }
 .faq.animate,
 .ready-to-transform-your-hiring-parent.animate {
@@ -873,7 +887,7 @@
   justify-content: center;
   gap: 58px;
   text-align: center;
-  font-family: var(--font-arciform-sans);
+  font-family: 'Arciform', 'Arial Rounded MT Bold', Verdana, sans-serif;
 }
 .column-1-icon {
   max-height: 100%;
@@ -1033,6 +1047,7 @@
   .logos {
     gap: 20px;
   }
+
   .hero {
     align-self: stretch;
     width: auto;
@@ -1192,6 +1207,7 @@
 @media screen and (max-width: 660px) {
 
 .logos {
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1200,7 +1216,23 @@
   gap: var(--gap-11xl);
 }
 .hero {
-  height: 1000px;
+  height: fit-content;
+  justify-content: start;
+  min-height: 600px;
+}
+
+.stages {
+  overflow: hidden;
+}
+
+.rocket-section-inner {
+  display: none;
+}
+
+.case-study {
+  overflow: hidden;
+  height: fit-content;
+  padding-bottom: 30px;
 }
 
 }
@@ -1223,15 +1255,11 @@
   .logos {
     align-self: stretch;
     width: auto;
-    gap: var(--gap-11xl);
+    gap: 50px;
   }
-  .logos {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+
   .hero {
-    height: 900px;
+    height: fit-content;
     padding-left: var(--padding-11xl);
     padding-right: var(--padding-11xl);
     box-sizing: border-box;
@@ -1249,6 +1277,7 @@
     height: 300px;
   }
   .rocket-section-inner {
+    display: none;
     flex: 1;
     height: auto;
     align-items: center;
@@ -1283,6 +1312,11 @@
     height: auto;
     padding-bottom: var(--padding-381xl);
     box-sizing: border-box;
+    overflow: hidden;
+  }
+  .stage-5 {
+    height: auto;
+    margin-top: 72px;
   }
   .frame-container {
     padding-left: 0;
@@ -1299,6 +1333,8 @@
     padding-right: var(--padding-11xl);
     padding-bottom: 55px;
     box-sizing: border-box;
+    overflow: hidden;
+    height: auto;
   }
   .list-1 {
     align-self: stretch;
@@ -1336,7 +1372,7 @@
   }
   .full-page {
     width: 100%;
-    gap: 130px;
+    gap: 55px;
     align-items: flex-start;
     justify-content: center;
   }
@@ -1351,7 +1387,7 @@
 }
 
 .arrow-icon {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 
@@ -1362,7 +1398,7 @@
 .list-1 .answer {
   color: var(--color-gray-100);
   overflow: hidden;
-  transition: max-height 0.2s ease-out, opacity 0.2s ease-out, padding 0.2s ease-out;
+  transition: max-height 0.1s ease-out, opacity 0.1s ease-out, padding 0.1s ease-out;
   max-height: 0;
   opacity: 0;
 }
@@ -1372,7 +1408,7 @@
   padding-right: 50px;
   padding-left: 10px;
   padding-bottom: 20px;
-  transition: max-height 0.7s ease-in, opacity 0.2s ease-in,  padding 0.2s ease-in;
+  transition: max-height 0.2s ease-in, opacity 0.1s ease-in,  padding 0.1s ease-in;
   max-height: 500px;
   opacity: 1;
 }

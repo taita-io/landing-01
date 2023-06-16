@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Arciform;
+  src: url("Arciform.06edfa27.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @keyframes slide-in-top {
   0% {
     opacity: 0;
@@ -82,7 +90,7 @@
 }
 
 .discover-the-power {
-  font-family: var(--font-arciform-sans);
+  font-family: Arciform, Arial Rounded MT Bold;
 }
 
 .we-will-work {
@@ -186,7 +194,6 @@
   justify-content: center;
   align-items: flex-start;
   gap: var(--gap-31xl);
-  opacity: 0;
   z-index: 2;
   flex-direction: row;
   display: flex;
@@ -336,11 +343,11 @@
 .rocket-section {
   padding: 0 var(--padding-131xl);
   color: var(--color-gray-100);
-  font-family: var(--font-arciform-sans);
   flex-direction: row;
   justify-content: center;
   align-self: stretch;
   align-items: center;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
   display: flex;
 }
 
@@ -357,9 +364,9 @@
 }
 
 .waitlist-sign-up {
-  font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
   width: 254px;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
+  font-size: 34.18px;
   top: 0;
   left: 29px;
 }
@@ -499,9 +506,9 @@
 }
 
 .exploratory-call {
-  font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
   width: 254px;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
+  font-size: 34.18px;
 }
 
 .upon-selection-well {
@@ -577,9 +584,9 @@
 }
 
 .custom-solution {
-  font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
   width: 298px;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
+  font-size: 34.18px;
 }
 
 .following-our-deep-dive {
@@ -636,9 +643,9 @@
 }
 
 .testing {
-  font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
   width: 254px;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
+  font-size: 34.18px;
   top: 0;
   left: 19px;
 }
@@ -710,9 +717,9 @@
 }
 
 .launch {
-  font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
   width: 254px;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
+  font-size: 34.18px;
   top: 0;
   left: 20px;
 }
@@ -792,9 +799,9 @@
   align-self: stretch;
   align-items: flex-start;
   gap: var(--gap-5xs);
-  font-size: 34.18px;
-  font-family: var(--font-arciform-sans);
   flex-direction: row;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
+  font-size: 34.18px;
   display: flex;
 }
 
@@ -927,8 +934,8 @@
   opacity: 0;
   text-align: center;
   color: var(--color-darkslateblue);
-  font-family: var(--font-arciform-sans);
   padding-top: 30px;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
 }
 
 .faq.animate, .ready-to-transform-your-hiring-parent.animate {
@@ -961,13 +968,13 @@
 
 .cta {
   text-align: center;
-  font-family: var(--font-arciform-sans);
   background: linear-gradient(-44.59deg, #f0f, #8600ce 50.52%, #164193);
   flex-direction: column;
   justify-content: center;
   align-self: stretch;
   gap: 58px;
   padding: 62px 0;
+  font-family: Arciform, Arial Rounded MT Bold, Verdana, sans-serif;
   display: flex;
 }
 
@@ -1329,10 +1336,29 @@
     align-items: center;
     gap: var(--gap-11xl);
     flex-direction: column;
+    display: none;
   }
 
   .hero {
-    height: 1000px;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 600px;
+    justify-content: start;
+  }
+
+  .stages {
+    overflow: hidden;
+  }
+
+  .rocket-section-inner {
+    display: none;
+  }
+
+  .case-study {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 30px;
+    overflow: hidden;
   }
 }
 
@@ -1357,17 +1383,12 @@
   .hero, .logos {
     width: auto;
     align-self: stretch;
-    gap: var(--gap-11xl);
-  }
-
-  .logos {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 50px;
   }
 
   .hero {
-    height: 900px;
+    height: -moz-fit-content;
+    height: fit-content;
     padding-left: var(--padding-11xl);
     padding-right: var(--padding-11xl);
     box-sizing: border-box;
@@ -1393,6 +1414,7 @@
     flex: 1;
     justify-content: center;
     align-items: center;
+    display: none;
   }
 
   .rocket-section {
@@ -1428,6 +1450,12 @@
     height: auto;
     padding-bottom: var(--padding-381xl);
     box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .stage-5 {
+    height: auto;
+    margin-top: 72px;
   }
 
   .frame-container {
@@ -1442,10 +1470,12 @@
     padding-left: var(--padding-131xl);
     padding-right: var(--padding-11xl);
     box-sizing: border-box;
+    height: auto;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     padding-bottom: 55px;
+    overflow: hidden;
   }
 
   .list-1 {
@@ -1490,7 +1520,7 @@
     width: 100%;
     justify-content: center;
     align-items: flex-start;
-    gap: 130px;
+    gap: 55px;
   }
 }
 
@@ -1499,7 +1529,7 @@
 }
 
 .arrow-icon {
-  transition: transform .3s ease-in-out;
+  transition: transform .1s ease-in-out;
 }
 
 .list-1.open .arrow-icon {
@@ -1510,7 +1540,7 @@
   color: var(--color-gray-100);
   max-height: 0;
   opacity: 0;
-  transition: max-height .2s ease-out, opacity .2s ease-out, padding .2s ease-out;
+  transition: max-height .1s ease-out, opacity .1s ease-out, padding .1s ease-out;
   overflow: hidden;
 }
 
@@ -1518,7 +1548,7 @@
   max-height: 500px;
   opacity: 1;
   padding: 5px 50px 20px 10px;
-  transition: max-height .7s ease-in, opacity .2s ease-in, padding .2s ease-in;
+  transition: max-height .2s ease-in, opacity .1s ease-in, padding .1s ease-in;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
