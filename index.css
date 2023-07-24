@@ -90,6 +90,7 @@
   letter-spacing: 0.1px;
   line-height: 24px;
   font-weight: 500;
+  text-decoration: none;
 }
 .blob-wrapper {
   position: absolute;
@@ -106,24 +107,18 @@
 }
 
 
-.button,
-.label {
-  display: flex;
-  flex-direction: row;
-  padding: 0 var(--padding-3xs);
-  align-items: center;
-  justify-content: center;
-}
+
 .button {
   border-radius: var(--br-6xs);
   background: linear-gradient(215.78deg, #0ff, #32ff01);
-  width: 198px;
+  width: fit-content;
   height: 57px;
   flex-direction: column;
   padding: var(--padding-xs) var(--padding-xl);
   box-sizing: border-box;
   justify-content: flex-start;
   cursor: pointer;
+  text-decoration: none;
 }
 .button:hover, .button1:hover {
   background: linear-gradient(215.78deg,  #FF00FF, rgb(0, 255, 255));
@@ -1215,6 +1210,8 @@
   width: auto;
   gap: var(--gap-11xl);
 }
+
+
 .hero {
   height: fit-content;
   justify-content: start;
@@ -1411,4 +1408,86 @@
   transition: max-height 0.2s ease-in, opacity 0.1s ease-in,  padding 0.1s ease-in;
   max-height: 500px;
   opacity: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  font-family: Nunito;
+  font-size: 17.5px;
+  width: 100%;
+}
+
+.navbar .logo {
+  margin-right: center;
+  flex: 1;
+}
+
+
+.navbar .menu-items {
+  display: flex;
+  gap: 27px;
+  flex: 1;
+  flex-grow: 1;
+  justify-content: end;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.login-button {
+  justify-content: flex-start;
+}
+
+.menu-item {
+  justify-content: flex-start;
+}
+
+
+/* Hamburger Icon */
+.hamburger-icon {
+  display: none;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  outline: none;
+}
+
+.hamburger-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger-icon {
+      display: block;
+  }
+
+  .menu-items {
+    z-index: 3;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #164193;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: none;
+  }
+
+  .menu-items.show-menu {
+      transform: translateX(0);
+      display: flex;
+  }
 }
