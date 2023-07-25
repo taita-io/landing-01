@@ -8,8 +8,8 @@
   <title>Taita - Your AI-based Hiring Assistant</title>
   <meta name="description"
     content="Taita gives recruiters and admissions officers AI-powered solutions to screen applicants efficiently. Features include scoring, custom summaries, side-by-side comparisons, dynamic interviews and more." />
-  <link rel="stylesheet" href="./global.css" />
-  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./global.css?v=1.2" />
+  <link rel="stylesheet" href="./index.css?v=1.2" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap" />
 
   <style>
@@ -52,7 +52,8 @@
 
       <div class="main-text" data-animate-on-scroll>
         <div class="discover-the-power">
-          imagine an efficient, insightful, and personalized recruitment process
+          imagine an <span class="green">efficient</span>, <span class="green">insightful</span> & <span
+            class="green">personalized</span> recruitment process
         </div>
         <div class="we-will-work">
           With Taita's AI, guided by human
@@ -62,7 +63,7 @@
         </div>
         <div class="button-wrapper">
           <a class="button" href="https://app.reclaim.ai/m/georgi-sokolov/high-priority-meeting">
-              Schedule Demo
+            Schedule Demo
           </a>
         </div>
       </div>
@@ -161,6 +162,86 @@
         </div>
       </div>
     </div>
+    <div class="features">
+      <div class="features-sections" data-animate-on-scroll>
+        <div class="list">
+          <h2 class="short-headline">empower your decision-making</h2>
+          <h3 class="sub-headline">Discover our most powerful features</h3>
+          <div class="list-1 open feature-select">
+            <div class="divider">
+              <div class="muted">
+                <div class="line"></div>
+              </div>
+            </div>
+            <img class="arrow-icon" alt="" src="./public/arrow.svg" />
+            <div class="feature-title-icon">
+              <img class="feature-icon" src="./public/score.svg" />
+              <div class="title">AI-Based Applicant Scoring</div>
+            </div>
+            <div class="answer">Effortlessly sift through hundreds of applicants. Our AI-based scoring system
+              evaluates each candidate based on the qualities you require, ensuring only the most suitable applicants
+              make it through.</div>
+            <div class="divider1"></div>
+          </div>
+          <div class="list-1 feature-select">
+            <div class="divider">
+              <div class="muted">
+                <div class="line"></div>
+              </div>
+            </div>
+            <img class="arrow-icon" alt="" src="./public/arrow.svg" />
+            <div class="feature-title-icon">
+              <img class="feature-icon" src="./public/comparison.svg" />
+
+              <div class="title">In-Depth Candidate Comparison</div>
+            </div>
+            <div class="answer">Dive deep into candidate responses. Compare applicants 1 v 1 on the questions you care
+              about most. Utilize AI-generated summaries or delve into full response transcripts with our AI-based
+              highlighting feature, spotlighting the most important parts of each response.</div>
+            <div class="divider1"></div>
+          </div>
+          <div class="list-1 feature-select">
+            <div class="divider">
+              <div class="muted">
+                <div class="line"></div>
+              </div>
+            </div>
+            <img class="arrow-icon" alt="" src="./public/arrow.svg" />
+            <div class="feature-title-icon">
+              <img class="feature-icon" src="./public/star.svg" />
+
+              <div class="title">Custom Summaries for Specific Insights</div>
+            </div>
+            <div class="answer">Need to focus on specific details? We've got you covered. Even if the information is
+              scattered across different responses, our system can create custom summaries, giving you a comprehensive
+              view of the applicant's experiences and skills.</div>
+            <div class="divider1"></div>
+          </div>
+          <div class="list-1 feature-select">
+            <div class="divider">
+              <div class="muted">
+                <div class="line"></div>
+              </div>
+            </div>
+            <img class="arrow-icon" alt="" src="./public/arrow.svg" />
+            <div class="feature-title-icon">
+              <img class="feature-icon" src="./public/chat.svg" />
+
+              <div class="title">Dynamic Interviews and Roleplay</div>
+            </div>
+            <div class="answer">Revamp your interview process with Taita's dynamic roleplay feature. Our AI-bot steps
+              into the shoes of a work role, engaging candidates in realistic scenarios. From a customer in a sales
+              situation to a teammate in a project, the AI-bot uncovers the candidate's skills and attributes,
+              illuminating their future on-the-job performance.</div>
+            <div class="divider1"></div>
+          </div>
+        </div>
+        <div class="feature-illustration">
+          <img class="feature-illustration-img shadow" src="./public/features-01.png" />
+        </div>
+      </div>
+    </div>
+
     <div class="stages">
       <div class="stage-1-parent">
         <div class="stage-1" data-animate-on-scroll>
@@ -474,6 +555,32 @@
         });
       });
     });
+
+    // features
+    document.addEventListener("DOMContentLoaded", function () {
+      var faqList = document.querySelectorAll(".feature-select");
+      var featureImg = document.querySelector(".feature-illustration-img"); // get the illustration image element
+      var images = ["./public/features-01.png", "./public/features-02.1.png", "./public/features-03.png", "./public/features-04.png"]; // image paths for each section
+
+      faqList.forEach(function (item, index) { // add index to the parameters
+        item.addEventListener("click", function () {
+          // Add 'open' class to clicked item
+          featureImg.src = images[index]; // change the illustration image based on the expanded section
+          if (this.classList.contains('open')) {
+            featureImg.classList.remove("visible")
+
+          } else {
+            featureImg.classList.add("visible")
+          }
+          if (index !== 3) {  // if index is not 4
+            featureImg.classList.add("shadow");  // add 'shadow' class
+          } else {
+            featureImg.classList.remove("shadow");  // remove 'shadow' class
+          }
+        });
+      });
+    });
+
     function scrollToCTA() {
       const cta = document.querySelector('.cta');
       cta.scrollIntoView({ behavior: 'smooth' });
